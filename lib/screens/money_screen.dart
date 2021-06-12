@@ -39,7 +39,7 @@ class MoneyScreen extends StatelessWidget {
             )
           ],
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(90),
+            preferredSize: Size.fromHeight(66),
             child: Container(
               width: double.infinity,
               height: 90,
@@ -82,56 +82,54 @@ class MoneyScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.only(top: 28),
-        child: ListView(
-          children: [
-            Row(
-              children: [
-                SizedBox(width: 23),
-                Expanded(
-                  child: CashWhiteContainer(
-                    svgPath: "assets/svg_icons/history.svg",
-                    text: "View history",
-                  ),
+      body: ListView(
+        children: [
+          SizedBox(height: 28),
+          Row(
+            children: [
+              SizedBox(width: 23),
+              Expanded(
+                child: CashWhiteContainer(
+                  svgPath: "assets/svg_icons/history.svg",
+                  text: "View history",
                 ),
-                SizedBox(width: 23),
-                Expanded(
-                  child: CashWhiteContainer(
-                    svgPath: "assets/svg_icons/cash_out.svg",
-                    text: "Cash out point",
-                  ),
+              ),
+              SizedBox(width: 23),
+              Expanded(
+                child: CashWhiteContainer(
+                  svgPath: "assets/svg_icons/cash_out.svg",
+                  text: "Cash out point",
                 ),
-                SizedBox(width: 23),
-                Expanded(
-                  child: CashWhiteContainer(
-                    svgPath: "assets/svg_icons/pay.svg",
-                    text: "Pay online",
-                  ),
+              ),
+              SizedBox(width: 23),
+              Expanded(
+                child: CashWhiteContainer(
+                  svgPath: "assets/svg_icons/pay.svg",
+                  text: "Pay online",
                 ),
-                SizedBox(width: 23),
-              ],
-            ),
-            SizedBox(height: 25),
-            MoneyListTile(
-              svgPath: "assets/svg_icons/question_mark.svg",
-              title: "Getting started",
-              subtitle: "All you need to know about our point system",
-            ),
-            SizedBox(height: 18),
-            MoneyListTile(
-              svgPath: "assets/svg_icons/cart.svg",
-              title: "Special promotions",
-              subtitle: "Check out the newest promotions",
-            ),
-            SizedBox(height: 18),
-            MoneyListTile(
-              svgPath: "assets/svg_icons/dollar_black.svg",
-              title: "Earn more points",
-              subtitle: "Read some tips from us on getting points",
-            ),
-          ],
-        ),
+              ),
+              SizedBox(width: 23),
+            ],
+          ),
+          SizedBox(height: 25),
+          MoneyListTile(
+            svgPath: "assets/svg_icons/question_mark.svg",
+            title: "Getting started",
+            subtitle: "All you need to know about the system",
+          ),
+          SizedBox(height: 18),
+          MoneyListTile(
+            svgPath: "assets/svg_icons/cart.svg",
+            title: "Special promo",
+            subtitle: "Newest promotions!",
+          ),
+          SizedBox(height: 18),
+          MoneyListTile(
+            svgPath: "assets/svg_icons/dollar_black.svg",
+            title: "Earn more points",
+            subtitle: "Read some tips from us on getting points",
+          ),
+        ],
       ),
     );
   }

@@ -73,7 +73,7 @@ class ProfileScreen extends StatelessWidget {
                     subtitle: Text(
                       "ID: 678412459744",
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 14,
                         height: 1.2,
                         color: Color(0xFFC4C4C4),
                       ),
@@ -85,43 +85,41 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.only(top: 28),
-        child: ListView(
-          children: [
-            ProfileListTile(
-              svgPath: 'assets/svg_icons/money.svg',
-              title: 'Payment info',
-            ),
-            SizedBox(height: 23),
-            ProfileListTile(
-              svgPath: 'assets/svg_icons/history_2.svg',
-              title: 'Terminal history',
-            ),
-            SizedBox(height: 23),
-            ProfileListTile(
-              svgPath: 'assets/svg_icons/shield.svg',
-              title: 'Privacy policy',
-            ),
-            SizedBox(height: 23),
-            ProfileListTile(
-              svgPath: 'assets/svg_icons/help.svg',
-              title: 'Help Center',
-            ),
-            SizedBox(height: 23),
-            ProfileListTile(
-              svgPath: 'assets/svg_icons/settings.svg',
-              title: 'Settings',
-            ),
-            SizedBox(height: 23),
-            ProfileListTile(
-              svgPath: 'assets/svg_icons/exit.svg',
-              title: 'Log out',
-              isSelected: true,
-            ),
-            SizedBox(height: 23),
-          ],
-        ),
+      body: ListView(
+        children: [
+          SizedBox(height: 28),
+          ProfileListTile(
+            svgPath: 'assets/svg_icons/money.svg',
+            title: 'Payment info',
+          ),
+          SizedBox(height: 23),
+          ProfileListTile(
+            svgPath: 'assets/svg_icons/history_2.svg',
+            title: 'Terminal history',
+          ),
+          SizedBox(height: 23),
+          ProfileListTile(
+            svgPath: 'assets/svg_icons/shield.svg',
+            title: 'Privacy policy',
+          ),
+          SizedBox(height: 23),
+          ProfileListTile(
+            svgPath: 'assets/svg_icons/help.svg',
+            title: 'Help Center',
+          ),
+          SizedBox(height: 23),
+          ProfileListTile(
+            svgPath: 'assets/svg_icons/settings.svg',
+            title: 'Settings',
+          ),
+          SizedBox(height: 23),
+          ProfileListTile(
+            svgPath: 'assets/svg_icons/exit.svg',
+            title: 'Log out',
+            isSelected: true,
+          ),
+          SizedBox(height: 23),
+        ],
       ),
     );
   }

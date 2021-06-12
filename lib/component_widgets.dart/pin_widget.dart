@@ -17,10 +17,11 @@ class PinWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
     return Positioned(
       bottom: 32,
       child: Container(
-        width: 350,
+        width: screenWidth * 0.9,
         height: 95,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -67,14 +68,15 @@ class PinWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 25),
+            Spacer(),
             CircularPercentIndicator(
               radius: 60.0,
               lineWidth: 5.0,
               percent: percentage.toDouble() / 100.0,
               center: Text("$percentage%"),
               progressColor: percentage < 80 ? Colors.green : Colors.red,
-            )
+            ),
+            SizedBox(width: 10),
           ],
         ),
       ),

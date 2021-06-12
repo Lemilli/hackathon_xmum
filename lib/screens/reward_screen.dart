@@ -17,6 +17,7 @@ class RewardScreen extends StatelessWidget {
           SvgPicture.asset('assets/svg_icons/coin.svg'),
           Text(
             "Points retrieved sucessfully!",
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 24,

@@ -7,17 +7,13 @@ import 'package:hackathon/component_widgets.dart/pin_widget.dart';
 import 'package:hackathon/global_variables.dart';
 import 'package:location/location.dart';
 
-import '../directions_model.dart';
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hackathon',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Colors.white,
-      ),
+      theme: ThemeData(primaryColor: Colors.white, fontFamily: 'Ubuntu'),
       home: Homepage(),
     );
   }
@@ -35,7 +31,6 @@ class _HomepageState extends State<Homepage> {
   );
 
   GoogleMapController _googleMapController;
-  Directions _directionsInfo;
 
   Location location = Location();
 
@@ -182,13 +177,13 @@ class _HomepageState extends State<Homepage> {
           elevation: 4,
           centerTitle: false,
           title: Padding(
-            padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+            padding: EdgeInsets.fromLTRB(6, 10, 0, 0),
             child: Row(
               children: [
                 const Text(
                   'Locate Terminal',
                   style: const TextStyle(
-                    fontSize: 24,
+                    fontSize: 22,
                     height: 1.2,
                   ),
                 ),
@@ -229,7 +224,8 @@ class _HomepageState extends State<Homepage> {
             child: Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
               child: Container(
-                width: 350,
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: 40),
                 height: 34,
                 child: TextField(
                   style: TextStyle(fontSize: 16, height: 1.36),
@@ -282,34 +278,6 @@ class _HomepageState extends State<Homepage> {
                     name: name,
                     street: street,
                     percentage: percentage,
-                  ),
-                if (_directionsInfo != null)
-                  Positioned(
-                    top: 20.0,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6.0,
-                        horizontal: 12.0,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.yellowAccent,
-                        borderRadius: BorderRadius.circular(20.0),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black26,
-                            offset: Offset(0, 2),
-                            blurRadius: 6.0,
-                          )
-                        ],
-                      ),
-                      child: Text(
-                        '${_directionsInfo.totalDistance}, ${_directionsInfo.totalDuration}',
-                        style: const TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
                   ),
               ],
             ),
