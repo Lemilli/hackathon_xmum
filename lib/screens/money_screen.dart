@@ -129,6 +129,7 @@ class MoneyScreen extends StatelessWidget {
             title: "Earn more points",
             subtitle: "Read some tips from us on getting points",
           ),
+          SizedBox(height: 18),
         ],
       ),
     );

@@ -4,12 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class PinWidget extends StatelessWidget {
-  final String imagePath, name, street;
+  final String name, street;
   final int percentage;
 
   const PinWidget({
     Key key,
-    @required this.imagePath,
     @required this.name,
     @required this.street,
     @required this.percentage,
@@ -34,12 +33,15 @@ class PinWidget extends StatelessWidget {
               height: 95,
               width: 100,
               padding: EdgeInsets.only(right: 8),
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.fill,
+              child: CircularPercentIndicator(
+                radius: 60.0,
+                lineWidth: 5.0,
+                percent: percentage.toDouble() / 100.0,
+                center: Text("$percentage%"),
+                progressColor: percentage < 80 ? Colors.green : Colors.red,
               ),
             ),
-            SizedBox(width: 8),
+            SizedBox(width: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -67,14 +69,6 @@ class PinWidget extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-            Spacer(),
-            CircularPercentIndicator(
-              radius: 60.0,
-              lineWidth: 5.0,
-              percent: percentage.toDouble() / 100.0,
-              center: Text("$percentage%"),
-              progressColor: percentage < 80 ? Colors.green : Colors.red,
             ),
             SizedBox(width: 10),
           ],

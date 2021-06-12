@@ -37,7 +37,7 @@ class _HomepageState extends State<Homepage> {
   PermissionStatus _permissionGranted;
 
   bool isPinVisible = false;
-  String imagePath, name, street;
+  String name, street;
   int percentage = 0;
 
   Future<void> _checkPermissions() async {
@@ -81,7 +81,6 @@ class _HomepageState extends State<Homepage> {
         infoWindow: const InfoWindow(title: 'Xiamen University Malaysia'),
         onTap: () {
           setState(() {
-            imagePath = "assets/images/xmum.jpg";
             name = "XMUM Terminal";
             street = "Jalan Sunsuria, Bandar Sunsuria";
             percentage = 85;
@@ -96,7 +95,6 @@ class _HomepageState extends State<Homepage> {
         infoWindow: const InfoWindow(title: 'KL Pavilion'),
         onTap: () {
           setState(() {
-            imagePath = "assets/images/pavilion.jpg";
             name = "Pavilion Terminal";
             street = "Bukit Bintang 168";
             percentage = 55;
@@ -112,7 +110,6 @@ class _HomepageState extends State<Homepage> {
         infoWindow: const InfoWindow(title: 'Pantai Hospital'),
         onTap: () {
           setState(() {
-            imagePath = "assets/images/pantai.jpg";
             name = "Pantai Hospital Terminal";
             street = "Jalan Bukit Pantai 8";
             percentage = 94;
@@ -127,7 +124,6 @@ class _HomepageState extends State<Homepage> {
         infoWindow: const InfoWindow(title: 'Merdeka Square'),
         onTap: () {
           setState(() {
-            imagePath = "assets/images/merdeka.jpg";
             name = "Merdeka Terminal";
             street = "Jalan Raja";
             percentage = 42;
@@ -142,7 +138,6 @@ class _HomepageState extends State<Homepage> {
         infoWindow: const InfoWindow(title: 'Menara KL'),
         onTap: () {
           setState(() {
-            imagePath = "assets/images/menara.jpg";
             name = "Menara Terminal";
             street = "Jalan Punchak Off 2";
             percentage = 77;
@@ -157,7 +152,6 @@ class _HomepageState extends State<Homepage> {
         infoWindow: const InfoWindow(title: 'Aquaria KLCC'),
         onTap: () {
           setState(() {
-            imagePath = "assets/images/aquaria.jpg";
             name = "Aquaria Terminal";
             street = "Jalan Pinang";
             percentage = 83;
@@ -274,7 +268,6 @@ class _HomepageState extends State<Homepage> {
                 ),
                 if (isPinVisible)
                   PinWidget(
-                    imagePath: imagePath,
                     name: name,
                     street: street,
                     percentage: percentage,
